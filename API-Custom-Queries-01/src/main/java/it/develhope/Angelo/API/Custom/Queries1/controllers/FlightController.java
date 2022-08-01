@@ -45,14 +45,12 @@ public class FlightController {
 
     @GetMapping()
     public List<Flight> getAllFlight(){
-        List<Flight> flights = flightRepository.findAll();
-        return flights;
+        return flightRepository.findAll();
     }
 
     //create a new Flight
     @PostMapping()
     public Flight createFlight(@RequestBody Flight flight){
-        Flight flight1 = flightRepository.saveAndFlush(flight);
-        return flight1;
+        return flightRepository.saveAndFlush(flight);
     }
 }
