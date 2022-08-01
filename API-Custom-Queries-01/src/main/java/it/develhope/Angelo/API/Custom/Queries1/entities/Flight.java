@@ -1,7 +1,13 @@
 package it.develhope.Angelo.API.Custom.Queries1.entities;
 
 import javax.persistence.*;
-
+//an entity Flight with the following columns:
+//
+//    a primary key
+//    a string description
+//    a string fromAirport
+//    a string toAirport
+//    an enum status
 @Entity
 public class Flight {
 

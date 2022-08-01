@@ -13,9 +13,10 @@ import java.util.Random;
 import static it.develhope.Angelo.API.Custom.Queries1.entities.FlightStatus.ON_TIME;
 
 @RestController
-@RequestMapping("/flights")
+@RequestMapping("/flights") //mapped on flights
 public class FlightController {
 
+    //all the string values are randomly generated (using random.ints())
     public String generateRandomValueForFlight() {
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
@@ -29,10 +30,11 @@ public class FlightController {
 
         return generatedString;
     }
+
     @Autowired
     private FlightRepository flightRepository;
 
-
+    //provisioning of 50 flights
     @GetMapping("/loadFlight")
     public List<Flight> getAllLoadFlightX(){
         List<Flight> flights = new ArrayList<>();
@@ -43,14 +45,9 @@ public class FlightController {
         return flights;
     }
 
+    //retrieving all the flights in the db
     @GetMapping()
     public List<Flight> getAllFlight(){
         return flightRepository.findAll();
-    }
-
-    //create a new Flight
-    @PostMapping()
-    public Flight createFlight(@RequestBody Flight flight){
-        return flightRepository.saveAndFlush(flight);
     }
 }
