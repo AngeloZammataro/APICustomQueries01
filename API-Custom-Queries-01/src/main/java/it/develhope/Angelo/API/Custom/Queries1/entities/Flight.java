@@ -18,7 +18,7 @@ public class Flight {
     private String fromAirport;
     private String toAirport;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private FlightStatus flightStatus;
 
     public Flight() {}
